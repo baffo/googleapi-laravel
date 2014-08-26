@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=5.2.1",
-        "illuminate/support": "4.1.*",
+        "illuminate/support": "4.2.*",
         "google/apiclient": "1.0.*@dev"
     },
     "autoload": {
