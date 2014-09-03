@@ -19,7 +19,7 @@ class GoogleapiServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('pongocms/googleapi');
+        $this->package('baffo/googleapi');
 
         // Load facade alias
         AliasLoader::getInstance()->alias(
@@ -38,7 +38,7 @@ class GoogleapiServiceProvider extends ServiceProvider {
     public function register()
     {
         // Register the config file
-        $this->app['config']->package('pongocms/googleapi', __DIR__ . '/../../config');
+        $this->app['config']->package('baffo/googleapi', __DIR__ . '/../../config');
 
         // Register the GoogleAPI class
         $this->app['GoogleAPI'] = $this->app->share(function($app)
