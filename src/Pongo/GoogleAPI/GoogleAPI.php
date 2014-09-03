@@ -205,10 +205,13 @@ class GoogleAPI {
     private function setupGoogleClient()
     {
         $client = new Google_Client();
-
-        $client->setClientId($this->getConfig('oauth2_client_id'));
-        $client->setClientSecret($this->getConfig('oauth2_client_secret'));
-        $client->setRedirectUri($this->getConfig('oauth2_redirect_uri'));
+        
+        $authConfig = $this->getConfig('auth');
+        $env = Config::get('app.environment');
+		
+        $client->setClientId($authConfig[$env]['oauth2_client_id']);
+        $client->setClientSecret($authConfig[$env]['oauth2_client_secret']);
+        $client->setRedirectUri($authConfig[$env]['oauth2_redirect_uri']);
         $client->setScopes($this->getConfig('services'));
         $client->setAccessType($this->getConfig('access_type'));
         $client->setApprovalPrompt($this->getConfig('approval_prompt'));
