@@ -1,3 +1,17 @@
+This Package has been forked to allow it to work with illuminate 4.2.* and to add support for multiple Google Client IDs, to seemlessly enable us to switch between multiple working environments
+
+Requires an additional config variable to be specified in your `/app/config/app.php` file:
+
+```php
+
+// app/config/app.php
+
+'providers' => array(
+    '...',
+    'environment' => 'local', // local, prod, ...
+);
+```
+
 # A Google API v3 wrapper for Laravel 4
 
 This package enables a Laravel flavoured way to manage Google services through its API interface (v3)
@@ -10,19 +24,9 @@ Add the required package to your composer.json file
 {
     "require": {
     	...
-		"pongocms/googleapi": "1.0"
+    		"google/apiclient": "dev-master",
+		"pongocms/googleapi": "dev-master"
 	}
-}
-```
-
-### Set minimum-stability to 'dev'
-
-In order to avoid Composer's possible conflicts, just set your composer.json 'minimum-stability' to 'dev'
-
-```js
-{
-	...
-    "minimum-stability": "dev"
 }
 ```
 
