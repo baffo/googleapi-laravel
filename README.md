@@ -6,10 +6,8 @@ Requires an additional config variable to be specified in your `/app/config/app.
 
 // app/config/app.php
 
-'providers' => array(
-    '...',
-    'environment' => 'local', // local, prod, ...
-);
+'...',
+'environment' => 'local', // local, prod, ...
 ```
 
 # A Google API v3 wrapper for Laravel 4
